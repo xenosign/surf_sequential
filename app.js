@@ -7,9 +7,9 @@ class App {
     document.body.appendChild(this.canvas);
 
     this.waves = [
-      new Wave("#0b57a2", 0.2, 6, 0.5, 0.5),
-      new Wave("#50d2f9", 0.5, 10, 0.2, 0.6),
-      new Wave("#4295f2", 1.4, 14, 0.1, 0.2),
+      new Wave("#0b57a2", 0.2, 6, 0.7, 0.7),
+      new Wave("#50d2f9", 0.5, 10, 0.6, 0.6),
+      new Wave("#4295f2", 1.4, 14, 0.5, 0.5),
     ];
 
     window.addEventListener("resize", this.resize.bind(this), false);
