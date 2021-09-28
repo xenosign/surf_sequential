@@ -30,6 +30,16 @@ export class Wave {
     let prev = cur;
 
     let dots = [];
+    // cur.x += this.speed;
+
+    // if (cur.x > -this.gap) {
+    //   this.points.unshift({
+    //     x: -(this.gap * 2),
+    //     y: this.getY(this.bottom, this.top),
+    //   });
+    // } else if (cur.x > this.seaWidth + this.gap) {
+    //   this.points.splice(-1);
+    // }
 
     ctx.moveTo(cur.x, cur.y);
 
@@ -38,7 +48,7 @@ export class Wave {
 
     for (let i = 1; i < this.points.length; i++) {
       cur = this.points[i];
-
+      // cur.x += this.speed;
       const cx = (prev.x + cur.x) / 2;
       const cy = (prev.y + cur.y) / 2;
       ctx.quadraticCurveTo(prev.x, prev.y, cx, cy);
@@ -67,7 +77,7 @@ export class Wave {
 
   getY(bottom, top) {
     const min = this.seaHeight * (1 - bottom);
-    const max = this.seaHeight * (1 - top);
-    return min + Math.random() * max;
+    const max = this.seaHeight * top;
+    return min - Math.random() * max;
   }
 }
