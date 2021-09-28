@@ -6,6 +6,7 @@ class App {
     this.ctx = this.canvas.getContext("2d");
     document.body.appendChild(this.canvas);
 
+    // #4
     this.waves = [
       new Wave("#0b57a2", 0.2, 6, 0.5, 0.4),
       // new Wave("#50d2f9", 0.5, 10, 0.3, 0.6),
@@ -26,6 +27,7 @@ class App {
     this.canvas.height = this.seaHeight * 2;
     this.ctx.scale(2, 2);
 
+    // #4
     for (let i = 0; i < this.waves.length; i++) {
       this.waves[i].resize(this.seaWidth, this.seaHeight);
     }
@@ -36,6 +38,7 @@ class App {
 
     this.ctx.clearRect(0, 0, this.seaWidth, this.seaHeight);
 
+    // #4
     let dots;
     for (let i = 0; i < this.waves.length; i++) {
       dots = this.waves[i].draw(this.ctx);

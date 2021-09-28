@@ -11,6 +11,7 @@ export class Wave {
     this.seaWidth = seaWidth;
     this.seaHeight = seaHeight;
 
+    // #1
     this.points = [];
     this.gap = Math.ceil(this.seaWidth / (this.total - 2));
 
@@ -23,6 +24,7 @@ export class Wave {
   }
 
   draw(ctx) {
+    // #3
     ctx.fillStyle = this.color;
     ctx.beginPath();
 
@@ -30,8 +32,11 @@ export class Wave {
     let prev = cur;
 
     let dots = [];
+
+    // #5
     // cur.x += this.speed;
 
+    // #6
     // if (cur.x > -this.gap) {
     //   this.points.unshift({
     //     x: -(this.gap * 2),
@@ -41,6 +46,7 @@ export class Wave {
     //   this.points.splice(-1);
     // }
 
+    // #3
     ctx.moveTo(cur.x, cur.y);
 
     let prevCx = cur.x;
@@ -48,7 +54,9 @@ export class Wave {
 
     for (let i = 1; i < this.points.length; i++) {
       cur = this.points[i];
-      // cur.x += this.speed;
+      // #5
+      //cur.x += this.speed;
+
       const cx = (prev.x + cur.x) / 2;
       const cy = (prev.y + cur.y) / 2;
       ctx.quadraticCurveTo(prev.x, prev.y, cx, cy);
@@ -76,6 +84,7 @@ export class Wave {
   }
 
   getY(bottom, top) {
+    // #2
     const min = this.seaHeight * (1 - bottom);
     const max = this.seaHeight * top;
     return min - Math.random() * max;
