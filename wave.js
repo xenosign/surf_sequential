@@ -34,17 +34,17 @@ export class Wave {
     let dots = [];
 
     // #5
-    // cur.x += this.speed;
+    cur.x += this.speed;
 
     // #6
-    // if (cur.x > -this.gap) {
-    //   this.points.unshift({
-    //     x: -(this.gap * 2),
-    //     y: this.getY(this.bottom, this.top),
-    //   });
-    // } else if (cur.x > this.seaWidth + this.gap) {
-    //   this.points.splice(-1);
-    // }
+    if (cur.x > -this.gap) {
+      this.points.unshift({
+        x: -(this.gap * 2),
+        y: this.getY(this.bottom, this.top),
+      });
+    } else if (cur.x > this.seaWidth + this.gap) {
+      this.points.splice(-1);
+    }
 
     // #3
     ctx.moveTo(cur.x, cur.y);
@@ -54,8 +54,9 @@ export class Wave {
 
     for (let i = 1; i < this.points.length; i++) {
       cur = this.points[i];
+      
       // #5
-      //cur.x += this.speed;
+      cur.x += this.speed;
 
       const cx = (prev.x + cur.x) / 2;
       const cy = (prev.y + cur.y) / 2;
