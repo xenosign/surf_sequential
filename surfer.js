@@ -6,7 +6,7 @@ export class Surfer {
     this.curFrame = 0;
 
     this.imgWidth = 344;
-    this.imgHeight = 277;
+    this.imgHeight = 276;
 
     this.surferWidth = 172;
     this.surferHeight = 138;
@@ -24,7 +24,7 @@ export class Surfer {
   animate(ctx, dots) {
     // // #13, 네모 박스 그리기
     // this.x = 650;
-    // this.y = 550;
+    // this.y = 350;
 
     // ctx.save();
     // ctx.translate(this.x, this.y);
