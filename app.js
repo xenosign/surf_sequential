@@ -12,12 +12,12 @@ class App {
     // #4
     this.waves = [
       new Wave("#0b57a2", 0.2, 6, 0.4, 0.4),
-      new Wave("#50d2f9", 0.5, 8, 0.3, 0.3),
-      new Wave("#4295f2", 1.0, 10, 0.1, 0.6),
+      //new Wave("#50d2f9", 0.5, 8, 0.3, 0.3),
+      //new Wave("#4295f2", 1.0, 10, 0.1, 0.6),
     ];
 
-    // #11, 서퍼 컨트롤러 추가
-    this.surferController = new SurferController();
+    // // #11, 서퍼 컨트롤러 추가
+    // this.surferController = new SurferController();
 
     window.addEventListener("resize", this.resize.bind(this), false);
     this.resize();
@@ -38,8 +38,8 @@ class App {
       this.waves[i].resize(this.seaWidth, this.seaHeight);
     }
 
-    // #11, 서퍼 컨트롤러 추가
-    this.surferController.resize(this.seaWidth, this.seaHeight);
+    // // #11, 서퍼 컨트롤러 추가
+    // this.surferController.resize(this.seaWidth, this.seaHeight);
   }
 
   animate(t) {
@@ -53,8 +53,8 @@ class App {
       dots = this.waves[i].draw(this.ctx);
     }
 
-    // #11, 서퍼 컨트롤러 추가
-    this.surferController.draw(this.ctx, t, dots);
+    // // #11, 서퍼 컨트롤러 추가
+    // this.surferController.draw(this.ctx, t, dots);
   }
 }
 
