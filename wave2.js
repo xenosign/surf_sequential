@@ -33,6 +33,19 @@ export class Wave {
 
     let dots = [];
 
+    // // #5 애니메이션 적용 부분
+    // cur.x += this.speed;
+
+    // // #6 애니메이션 적용 부분
+    // if (cur.x > -this.gap) {
+    //   this.points.unshift({
+    //     x: -(this.gap * 2),
+    //     y: this.getY(this.bottom, this.top),
+    //   });
+    // } else if (cur.x > this.seaWidth + this.gap) {
+    //   this.points.splice(-1);
+    // }
+
     // #3
     ctx.moveTo(cur.x, cur.y);
 
@@ -41,6 +54,9 @@ export class Wave {
 
     for (let i = 1; i < this.points.length; i++) {
       cur = this.points[i];
+
+      // // #5 애니메이션 적용 부분
+      // cur.x += this.speed;
 
       const cx = (prev.x + cur.x) / 2;
       const cy = (prev.y + cur.y) / 2;
