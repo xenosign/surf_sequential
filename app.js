@@ -22,6 +22,8 @@ class App {
   animate(t) {
     requestAnimationFrame(this.animate.bind(this));
     this.ctx.clearRect(0, 0, this.seaWidth, this.seaHeight);
+    this.ctx.fillStyle = "red";
+    this.ctx.fillRect(this.seaWidth/2, this.seaHeight/2, this.seaWidth/2+this.seaWidth/6, this.seaHeight/2+this.seaHeight/6);
   }
 }
 
