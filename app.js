@@ -36,6 +36,7 @@ class App {
 
   animate(t) {
     requestAnimationFrame(this.animate.bind(this));
+    this.ctx.clearRect(0, 0, this.seaWidth, this.seaHeight);
 
     // #4
     let dots;
