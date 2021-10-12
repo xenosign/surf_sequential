@@ -1,4 +1,5 @@
 import { Wave } from "./wave.js";
+import { SurferController } from "./surfer-controller.js";
 
 class App {
   constructor() {
@@ -12,6 +13,10 @@ class App {
       new Wave("#50d2f9", 0.7, 8, 0.3, 0.3),
       new Wave("#4295f2", 1.0, 10, 0.1, 0.6),
     ];
+
+    // #11, 서퍼 컨트롤러 추가
+    this.surferController = new SurferController();
+
 
     window.addEventListener("resize", this.resize.bind(this), false);
     this.resize();
@@ -29,8 +34,11 @@ class App {
 
     // #4
     for (let i = 0; i < this.waves.length; i++) {
-      this.waves[i].resize(this.seaWidth, this.seaHeight);
+      this.waves[i].resize(this.seaWidth, this.seaHeight);      
     }
+
+    // #11, 서퍼 컨트롤러 추가
+    this.surferController.resize(this.seaWidth, this.seaHeight);
   }
 
   animate(t) {
@@ -42,6 +50,9 @@ class App {
     for (let i = 0; i < this.waves.length; i++) {
       dots = this.waves[i].draw(this.ctx);
     }
+
+    // #11, 서퍼 컨트롤러 추가
+    this.surferController.draw(this.ctx, t, dots);
   }
 }
 
