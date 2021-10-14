@@ -18,15 +18,15 @@ export class Sun {
     this.fpsTime = 1000 / this.fps;
 
     // @@@@@@@ 햇님 이미지 추가
-    this.img = new Image();     // 이미지 객체로 이미지 로드
-    this.img.src = "tele.png";  // 이미지 파일명 알려주기
-    this.imgWidth = 342;        // 햇님 이미지 크기
-    this.imgHeight = 338;       // 햇님 이미지 크기
+    this.img = new Image(); // 이미지 객체로 이미지 로드
+    this.img.src = "tele.png"; // 이미지 파일명 알려주기
+    this.imgWidth = 342; // 햇님 이미지 크기
+    this.imgHeight = 338; // 햇님 이미지 크기
 
-    this.scale = 0.6            // 햇님 이미지 크기 조절
+    this.scale = 0.75; // 햇님 이미지 크기 조절
 
-    this.imgWidth2 = this.imgWidth * this.scale;    // 크기 조절 된 이미지 크기 값 반환
-    this.imgHeight2 = this.imgHeight * this.scale;  // 크기 조절 된 이미지 크기 값 반환
+    this.imgWidth2 = this.imgWidth * this.scale; // 크기 조절 된 이미지 크기 값 반환
+    this.imgHeight2 = this.imgHeight * this.scale; // 크기 조절 된 이미지 크기 값 반환
   }
 
   resize(seaWidth, seaHeight) {
@@ -47,9 +47,9 @@ export class Sun {
       this.time = t;
       this.updatePoints();
     }
-    
+
     // @6, 원 대신 랜덤으로 업데이트 되는 점을 연결해서 해를 표현
-    ctx.fillStyle = "#ffb200";
+    ctx.fillStyle = "#fce85c";
     ctx.beginPath();
     let pos = this.pos[0];
     ctx.moveTo(pos.x + this.x, pos.y + this.y);
@@ -61,8 +61,8 @@ export class Sun {
 
     ctx.drawImage(
       this.img,
-      this.x - this.imgWidth2 / 2,          // 해의 중심 좌표에서 이미지 그릴 이미지 크기의 x 값의 반을 빼줘서 이미지가 해의 중간에 위치하도록 설정
-      this.y - this.imgHeight2 / 2,         // 해의 중심 좌표에서 이미지 그릴 이미지 크기의 y 값의 반을 빼줘서 이미지가 해의 중간에 위치하도록 설정
+      this.x - this.imgWidth2 / 2, // 해의 중심 좌표에서 이미지 그릴 이미지 크기의 x 값의 반을 빼줘서 이미지가 해의 중간에 위치하도록 설정
+      this.y - this.imgHeight2 / 2, // 해의 중심 좌표에서 이미지 그릴 이미지 크기의 y 값의 반을 빼줘서 이미지가 해의 중간에 위치하도록 설정
       this.imgWidth2,
       this.imgHeight2
     );
